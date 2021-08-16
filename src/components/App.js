@@ -3,6 +3,7 @@ import '../styles/App.css';
 
 function getcurrentTime(){
     const currentdate= new Date();
+   
 
     return currentdate.toLocaleTimeString().toUpperCase();
 }
@@ -11,20 +12,22 @@ class App extends Component {
 
     constructor(props){
         super(props);
+        
         this.state = {
+            
             time:getcurrentTime(),
         };
 
     }
     componentDidMount(){
-        this.timeinterval=setInterval(()=>{
-            this.state({time:getcurrentTime()})
+        this.intervalId=setInterval(()=>{
+            this.state({ time:getcurrentTime() })
 
-        },1000)
+        }, 1000);
 
     }
     componentWillUnmount(){
-        clearInterval(this.timeinterval);
+        clearInterval(this.intervalId);
     }
     render() {
 
