@@ -21,7 +21,7 @@ class App extends Component {
     }
     componentDidMount(){
         this.intervalId=setInterval(()=>{
-            this.setstate({ time:getcurrentTime() });
+            this.setState({ time:getcurrentTime() });
 
         }, 1000);
 
